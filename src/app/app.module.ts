@@ -17,6 +17,7 @@ import { RegisterPage } from '../pages/register/register';
     LoginPage,
     RegisterPage
   
+
   ],
   imports: [
     BrowserModule,
@@ -30,6 +31,7 @@ import { RegisterPage } from '../pages/register/register';
     RegisterPage
 
    
+
   ],
   providers: [
     StatusBar,
