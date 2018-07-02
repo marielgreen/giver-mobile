@@ -1,14 +1,51 @@
+<!-- Roos workspace -->
+
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Locate the shelter you wish to donate to.
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+  <!-- need to make the search bar funtional -->
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  <ion-list>
+    <ion-item *ngFor="let item of items">
+      {{ location }}
+    </ion-item>
+  </ion-list>
+
+  <!--  need to make my location button functional -->
+
+  <button ion-button clear>My Location</button>
+
+  <!-- need to make google apps appear here -->
+  <div>
+    <ion-item>
+      <ion-img  width="400" height="200" src="https://www.google.co.za/maps/vt/data=w8RR6beBQZ5RXnJkUvr_VKbTTljfHPlTT9WHA9DkT4iPR0dXxVYK5N7iuueyJAPWoYk4bFMGFq3qzbdLuLvSiQQCZEiExH_1jbYtS1HYgwgH_ep5gEQcXF0bfqNT8s3z5mc-PG3C3scn5ztuBg5fnSBZXLomesYKnKfwMttnZrHnrvKLQIQm00o5YIbY7WZB5Chjvjdgarap5RKRI853oawa7Ov3BbRRiFt9eIjG"></ion-img>
+    </ion-item>
+  </div>
+
+    <!--  
+    Need to make image appear
+    Need to make the list pass through from the .ts file below
+    -->
+
+    <div *ngFor="let Shelter of shelters">
+      <p> {{Shelter.image}}
+        <p>
+          <p>
+            <b>{{Shelter.name}}</b>
+          </p>
+          <p>{{Shelter.address}}</p>
+          <p>{{Shelter.note}}</p>
+          <p>
+            <a href="{{Shelter.link}}">click here for website</a>
+          </p>
+          <button ion-button (click)="NavigateToShelterPage()">shelter</button>
+    </div>
+
 </ion-content>
