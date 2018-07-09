@@ -1,9 +1,9 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component, NgModule } from '@angular/core';
+import { IonicPage, NavController, NavParams, IonicPageModule } from 'ionic-angular';
 import { HomePage } from '../home/home';
 
 
-@IonicPage()
+// @IonicPage()
 @Component({
   selector: 'page-register',
   templateUrl: 'register.html',
