@@ -10,29 +10,17 @@
 
 <ion-content padding>
 
-  <!-- need to make the search bar funtional -->
-  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
-  <ion-list>
-    <ion-item *ngFor="let item of items">
-      {{ location }}
-    </ion-item>
-  </ion-list>
-
-  <!--  need to make my location button functional -->
-
-  <button ion-button clear>My Location</button>
-
-  <!--need to make google apps appear here -->
+  <!-- below is bing maps -->
 
   <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=AqBGcbdM62R25R1aIk5BYDur1Y6Ywp2AdtN2w2QZZIONHhZaJh10cLT6hw9U2AQ-' async defer></script>
 
   <div style="height: 500px">
     <x-map #xmap>
-        <x-map-marker
-            [Latitude]="30" 
-            [Longitude]="90" 
-            [Title]="'My Marker'" 
-            [IconUrl]="'https://cdn0.iconfinder.com/data/icons/industrial-icons/164/2-128.png'" 
+        <x-map-marker *ngFor="let shelter of shelters"
+            [Latitude]= "shelter.lat" 
+            [Longitude]= "shelter.lng"
+            [Title]= "shelter.name" 
+            [IconUrl]="'#'" 
             [IconInfo]="{
                 markerType: _markerTypeId.FontMarker,
                 fontName: 'FontAwesome',
@@ -60,6 +48,11 @@
       </ion-list>
     </div>
 
+      <!-- need to make the search bar funtional -->
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  <ion-list>
+  </ion-list>
+
     <!--  
     Need to make image appear
     Need to make the list pass through from the .ts file below
@@ -76,7 +69,7 @@
           <p>
             <a href="{{Shelter.link}}">click here for website</a>
           </p>
-          <button ion-button (click)="NavigateToShelterPage()">shelter</button>
+          <button ion-button (click)="NavigateToShelterPage()">donate</button>
           <br>
     </div>
 
