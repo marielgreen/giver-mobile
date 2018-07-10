@@ -43,8 +43,8 @@ export class HomePage {
     shelter2.address = " 22 Shelter Rd, Milnerton, Cape Town";
     shelter2.note = "Food Bank";
     shelter2.link = "#";
-    shelter2.lat = -33.12
-    shelter2.lng = 18.4241
+    shelter2.lat = -33.875
+    shelter2.lng = 18.5
     this.shelters.push(shelter2);
 
   }
