@@ -9,7 +9,8 @@ import { Shelter } from '../home/Models'
 import { Http } from '@angular/http'; //for intergrating 
 import 'rxjs/add/operator/map';
 import { MarkerTypeId, IMapOptions } from 'angular-maps';
-
+import { Shelter1Page } from '../shelter1list/shelter1list';
+import { Shelter2Page } from '../shelter2list/shelter2list';
 
 @Component({
   selector: 'page-home',
@@ -28,6 +29,23 @@ export class HomePage {
     });
 
     var shelter1 = new Shelter();
+
+    shelter1.image = "shelter pic"
+    shelter1.name = "Maddie's Shelter";
+    shelter1.address = "shelter address";
+    shelter1.note = "shelter description";
+    shelter1.link = "#";
+   this.shelters.push(shelter1);
+  
+   
+    
+    var shelter2 = new Shelter();
+    shelter2.image = "shelter pic Mariel"
+    shelter2.name = "Mariel's shelter";
+    shelter2.address = "shelter address";
+    shelter2.note = "homeless shelter";
+    shelter2.link = "#";
+
     shelter1.image = " "
     shelter1.name = "The Haven Night Shelter";
     shelter1.address = "16 Piers Rd, Wynberg, Cape Town, 7800";
@@ -45,9 +63,18 @@ export class HomePage {
     shelter2.link = "http://www.stanneshomes.org.za/";
     shelter2.lat = -33.875
     shelter2.lng = 18.5
+
     this.shelters.push(shelter2);
 
   }
+  navigateToShelter1list(){
+    console.log("Navigating..");
+    this.navCtrl.push(Shelter1Page);
+    }
+    navigateToShelter2list(){
+      console.log("Navigating..");
+      this.navCtrl.push(Shelter2Page)
+    }
    _markerTypeId = MarkerTypeId 
             // a little trick so we can use enums in the template...
 
@@ -61,6 +88,8 @@ export class HomePage {
         _click(){
            console.log("hello world...");
        }
+      
+       
 
 
 }
