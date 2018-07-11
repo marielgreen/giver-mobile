@@ -29,23 +29,6 @@ export class HomePage {
     });
 
     var shelter1 = new Shelter();
-
-    shelter1.image = "shelter pic"
-    shelter1.name = "Maddie's Shelter";
-    shelter1.address = "shelter address";
-    shelter1.note = "shelter description";
-    shelter1.link = "#";
-   this.shelters.push(shelter1);
-  
-   
-    
-    var shelter2 = new Shelter();
-    shelter2.image = "shelter pic Mariel"
-    shelter2.name = "Mariel's shelter";
-    shelter2.address = "shelter address";
-    shelter2.note = "homeless shelter";
-    shelter2.link = "#";
-
     shelter1.image = " "
     shelter1.name = "The Haven Night Shelter";
     shelter1.address = "16 Piers Rd, Wynberg, Cape Town, 7800";
