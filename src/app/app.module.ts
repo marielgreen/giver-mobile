@@ -9,13 +9,17 @@ import { HomePage } from '../pages/home/home';
 import { MapModule, MapAPILoader, BingMapAPILoaderConfig, BingMapAPILoader, WindowRef, DocumentRef, MapServiceFactory, BingMapServiceFactory } from "angular-maps";
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
+import { Shelter1Page } from '../pages/shelter1list/shelter1list';
+import { Shelter2Page } from '../pages/shelter2list/shelter2list';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     LoginPage,
-    RegisterPage
+    RegisterPage,
+    Shelter1Page,
+    Shelter2Page
   ],
   imports: [
     BrowserModule,
@@ -28,7 +32,9 @@ import { RegisterPage } from '../pages/register/register';
     MyApp,
     HomePage,
     LoginPage,
-    RegisterPage
+    RegisterPage,
+    Shelter1Page,
+    Shelter2Page
 
   ],
   providers: [

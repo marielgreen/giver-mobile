@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { RegisterPage } from '../register/register';
 
+
 /**
  * Generated class for the LoginPage page.
  *
@@ -28,4 +29,5 @@ navigateToRegister(){
   console.log("Navigating...");
   this.navCtrl.push(RegisterPage)
 }
+
 }

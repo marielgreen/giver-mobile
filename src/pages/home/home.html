@@ -1,5 +1,3 @@
-<!-- Roos workspace -->
-
 <ion-header>
   <ion-navbar>
     <ion-title>
@@ -8,76 +6,50 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-
-  <!-- need to make the search bar funtional -->
+<ion-content style="background-color: olive">
+<p align="center">
   <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
   <ion-list>
     <ion-item *ngFor="let item of items">
       {{ location }}
     </ion-item>
   </ion-list>
+  <button ion-button color="dark" clear>My Location</button>
 
-  <!--  need to make my location button functional -->
-
-  <button ion-button clear>My Location</button>
-
-  <!--need to make google apps appear here -->
-
-  <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=AqBGcbdM62R25R1aIk5BYDur1Y6Ywp2AdtN2w2QZZIONHhZaJh10cLT6hw9U2AQ-' async defer></script>
-
+  <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=AqBGcbdM62R25R1aIk5BYDur1Y6Ywp2AdtN2w2QZZIONHhZaJh10cLT6hw9U2AQ-'
+    async defer></script>
   <div style="height: 500px">
     <x-map #xmap>
-        <x-map-marker
-            [Latitude]="30" 
-            [Longitude]="90" 
-            [Title]="'My Marker'" 
-            [IconUrl]="'https://cdn0.iconfinder.com/data/icons/industrial-icons/164/2-128.png'" 
-            [IconInfo]="{
+      <x-map-marker [Latitude]="30" [Longitude]="90" [Title]="'My Marker'" [IconUrl]="'https://cdn0.iconfinder.com/data/icons/industrial-icons/164/2-128.png'"
+        [IconInfo]="{
                 markerType: _markerTypeId.FontMarker,
                 fontName: 'FontAwesome',
                 fontSize: 48,
                 color: 'green',
                 markerOffsetRatio: { x: 0.5, y: 1 },
                 text: '\uF276'
-            }">  
-        </x-map-marker>
+            }">
+      </x-map-marker>
     </x-map>
-</div>
-  <!-- 
-    <div>
-    <ion-item>
-      <ion-img  width="400" height="200" src="https://www.google.co.za/maps/vt/data=w8RR6beBQZ5RXnJkUvr_VKbTTljfHPlTT9WHA9DkT4iPR0dXxVYK5N7iuueyJAPWoYk4bFMGFq3qzbdLuLvSiQQCZEiExH_1jbYtS1HYgwgH_ep5gEQcXF0bfqNT8s3z5mc-PG3C3scn5ztuBg5fnSBZXLomesYKnKfwMttnZrHnrvKLQIQm00o5YIbY7WZB5Chjvjdgarap5RKRI853oawa7Ov3BbRRiFt9eIjG"></ion-img>
-    </ion-item>
   </div>
--->
-<!-- this section is for intergrating back to (page/home.ts)-->
   <div>
-      <ion-list>
-        <ion-item *ngFor="let post of posts">
-          <img [src]="post.data.url" />
-        </ion-item>
-      </ion-list>
-    </div>
-
-    <!--  
-    Need to make image appear
-    Need to make the list pass through from the .ts file below
-    -->
-
-    <div *ngFor="let Shelter of shelters">
-      <p> {{Shelter.image}}
+    <ion-list>
+      <ion-item *ngFor="let post of posts">
+        <img [src]="post.data.url" />
+      </ion-item>
+    </ion-list>
+  </div>
+  <div text-center>
+  <div *ngFor="let Shelter of shelters">
+    <p> {{Shelter.image}}
+      <p>
         <p>
-          <p>
-            <b>{{Shelter.name}}</b>
-          </p>
-          <p>{{Shelter.address}}</p>
-          <p>{{Shelter.note}}</p>
-          <p>
-            <a href="{{Shelter.link}}">click here for website</a>
-          </p>
-          <button ion-button (click)="NavigateToShelterPage()">shelter</button>
-          <br>
-    </div>
+          <b>{{Shelter.name}}</b>
+        </p>
+        <p>{{Shelter.address}}</p>
+        <p>{{Shelter.note}}</p>
+       
+        <button ion-button color="dark" outline (click)="navigateToShelter1Page()">shelter</button>
+      </div>
 
-</ion-content>
+
