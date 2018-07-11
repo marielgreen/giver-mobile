@@ -25,7 +25,7 @@ export class HomePage {
 
     this.http.get('https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=[AqBGcbdM62R25R1aIk5BYDur1Y6Ywp2AdtN2w2QZZIONHhZaJh10cLT6hw9U2AQ-]').map(res => res.json()).subscribe(data => {
       this.posts = data.data.children; // this is whats intergrated 
-   
+
     });
 
     var shelter1 = new Shelter();
@@ -46,33 +46,31 @@ export class HomePage {
     shelter2.link = "http://www.stanneshomes.org.za/";
     shelter2.lat = -33.875
     shelter2.lng = 18.5
-
     this.shelters.push(shelter2);
 
   }
-  navigateToShelter1list(){
+  _markerTypeId = MarkerTypeId
+  // a little trick so we can use enums in the template...
+
+  _options: IMapOptions = {
+    disableBirdseye: false,
+    disableStreetside: false,
+    navigationBarMode: 1
+  };
+  // for all available options for the various components, see IInfoWindowOptions, IInfoWindowAction, IMarkerOptions, IMapOptions, IMarkerIconInfo
+
+  _click() {
+    console.log("hello world...");
+  }
+
+  navigateToShelter1list() {
     console.log("Navigating..");
     this.navCtrl.push(Shelter1Page);
-    }
-    navigateToShelter2list(){
-      console.log("Navigating..");
-      this.navCtrl.push(Shelter2Page)
-    }
-   _markerTypeId = MarkerTypeId 
-            // a little trick so we can use enums in the template...
-
-        _options: IMapOptions = {
-            disableBirdseye: false,
-            disableStreetside: false,
-            navigationBarMode: 1
-       };
-            // for all available options for the various components, see IInfoWindowOptions, IInfoWindowAction, IMarkerOptions, IMapOptions, IMarkerIconInfo
-
-        _click(){
-           console.log("hello world...");
-       }
-      
-       
+  }
+  navigateToShelter2list() {
+    console.log("Navigating..");
+    this.navCtrl.push(Shelter2Page)
+  }
 
 
 }
