@@ -22,6 +22,22 @@
     <x-map #xmap>
       <x-map-marker [Latitude]="30" [Longitude]="90" [Title]="'My Marker'" [IconUrl]="'https://cdn0.iconfinder.com/data/icons/industrial-icons/164/2-128.png'"
         [IconInfo]="{
+
+<ion-content padding>
+
+  <!-- below is bing maps -->
+
+  <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=AqBGcbdM62R25R1aIk5BYDur1Y6Ywp2AdtN2w2QZZIONHhZaJh10cLT6hw9U2AQ-' async defer></script>
+
+  <div style="height: 500px">
+    <x-map #xmap>
+        <x-map-marker *ngFor="let shelter of shelters"
+            [Latitude]= "shelter.lat" 
+            [Longitude]= "shelter.lng"
+            [Title]= "shelter.name" 
+            [IconUrl]="'#'" 
+            [IconInfo]="{
+
                 markerType: _markerTypeId.FontMarker,
                 fontName: 'FontAwesome',
                 fontSize: 48,
@@ -33,6 +49,7 @@
     </x-map>
   </div>
   <div>
+
     <ion-list>
       <ion-item *ngFor="let post of posts">
         <img [src]="post.data.url" />
@@ -51,5 +68,38 @@
        
         <button ion-button color="dark" outline (click)="navigateToShelter1Page()">shelter</button>
       </div>
+
+      <ion-list>
+        <ion-item *ngFor="let post of posts">
+          <img [src]="post.data.url" />
+        </ion-item>
+      </ion-list>
+    </div>
+
+      <!-- need to make the search bar funtional -->
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  <ion-list>
+  </ion-list>
+
+    <!--  
+    Need to make image appear
+    Need to make the list pass through from the .ts file below
+    -->
+
+    <div *ngFor="let Shelter of shelters">
+      <p> {{Shelter.image}}
+        <p>
+          <p>
+            <b>{{Shelter.name}}</b>
+          </p>
+          <p>{{Shelter.address}}</p>
+          <p>{{Shelter.note}}</p>
+          <p>
+            <a href="{{Shelter.link}}">click here for website</a>
+          </p>
+          <button ion-button (click)="NavigateToShelterPage()">items needed</button>
+          <button ion-button (click)="NavigateToDonationPage()">donate</button>
+          <br>
+    </div>
 
 
