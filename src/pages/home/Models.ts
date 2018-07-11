@@ -4,4 +4,6 @@ export class Shelter {
     address: string;
     note: string;
     link: string;
+    lat: number;
+    lng: number;
 }
