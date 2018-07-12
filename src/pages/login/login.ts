@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { RegisterPage } from '../register/register';
 import { Http } from '@angular/http';
+import { UpdatePage} from '../update/update';
+
 
 
 /**
@@ -12,7 +14,7 @@ import { Http } from '@angular/http';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+//@IonicPage()
 @Component({
   selector: 'page-login',
   templateUrl: 'login.html',
@@ -29,6 +31,10 @@ export class LoginPage {
 navigateToRegister(){
   console.log("Navigating...");
   this.navCtrl.push(RegisterPage)
+}
+navigateToUpdate(){
+  console.log("Navigating..");
+  this.navCtrl.push(UpdatePage)
 }
 
 
