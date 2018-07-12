@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { RegisterPage } from '../register/register';
+import { Http } from '@angular/http';
 import { UpdatePage} from '../update/update';
+
 
 
 /**
@@ -19,7 +21,7 @@ import { UpdatePage} from '../update/update';
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http) {
   }
 
  navigateToHome() {
@@ -34,5 +36,6 @@ navigateToUpdate(){
   console.log("Navigating..");
   this.navCtrl.push(UpdatePage)
 }
+
 
 }
