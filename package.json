@@ -28,6 +28,7 @@
     "@types/bingmaps": "0.0.1",
     "angular-maps": "^0.8.3",
     "angular-material": "^1.1.10",
+    "bcryptjs": "^2.4.3",
     "bower": "^1.8.4",
     "ionic-angular": "3.9.2",
     "ionicons": "3.0.0",
