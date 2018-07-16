@@ -6,13 +6,13 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding class="bg-image add-margin">
 
   <!-- below is bing maps -->
 
   <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=AqBGcbdM62R25R1aIk5BYDur1Y6Ywp2AdtN2w2QZZIONHhZaJh10cLT6hw9U2AQ-' async defer></script>
 
-  <div style="height: 500px">
+  <div style="height: 500px;" justify-content-center>
     <x-map #xmap>
         <x-map-marker *ngFor="let shelter of shelters"
             [Latitude]= "shelter.lat" 
@@ -34,11 +34,14 @@
   <div>
 
           <!-- need to make the search bar funtional -->
-  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  <!--<ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
   <ion-list>
-  </ion-list>
+  </ion-list>-->
 
-    <ion-list>
+  <ion-card>
+    <ion-card-content>
+
+  <ion-list >
   <div text-center>
   <div *ngFor="let Shelter of shelters">
     <p> {{Shelter.image}}
@@ -50,9 +53,11 @@
         <p>{{Shelter.note}}</p>
        
         <button ion-button color="dark" outline (click)="navigateToShelter1list()">shelter</button>
-        <button ion-button color="dark" outline (click)="navigateTodonate()">donate</button>
+        <button ion-button color="dark" outline (click)="navigateToDonate()">donate</button>
       </div>
+  
 
+    
 
     <!--  
     Need to make image appear
