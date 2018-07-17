@@ -19,7 +19,7 @@ import { Shelter2Page } from '../pages/shelter2list/shelter2list';
     LoginPage,
     RegisterPage,
     Shelter1Page,
-    Shelter2Page
+    Shelter2Page,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +34,7 @@ import { Shelter2Page } from '../pages/shelter2list/shelter2list';
     LoginPage,
     RegisterPage,
     Shelter1Page,
-    Shelter2Page
+    Shelter2Page,
 
   ],
   providers: [

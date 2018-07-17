@@ -38,6 +38,11 @@
   <ion-list>
   </ion-list>
 
+     <!--  
+    Need to make image appear
+    Need to make the shelter pass through with the button click from the .ts file below
+    -->
+
     <ion-list>
   <div text-center>
   <div *ngFor="let Shelter of shelters">
@@ -49,14 +54,12 @@
         <p>{{Shelter.address}}</p>
         <p>{{Shelter.note}}</p>
        
-        <button ion-button color="dark" outline (click)="navigateToShelter1list()">shelter</button>
+       
+        <button ion-button color="dark" outline (click)="navigateToShelter1Page(Shelter)">shelter</button>
         <button ion-button color="dark" outline (click)="navigateTodonate()">donate</button>
       </div>
 
 
-    <!--  
-    Need to make image appear
-    Need to make the list pass through from the .ts file below
-    -->
+ 
 
 

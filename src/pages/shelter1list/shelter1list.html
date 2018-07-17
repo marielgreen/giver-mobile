@@ -1,5 +1,21 @@
 <ion-content style="background-color: olive">
-        <ion-list>
+    
+  
+  <ion-list>
+    <div text-center>
+    <div *ngFor="let Smodel of smodel">
+      <p> {{Smodel.item1}} <p>
+     <p>{{Smodel.item2}}</p>
+      <p>{{Smodel.item3}}</p>
+      <p>{{Smodel.item4}}</p>
+      <p> {{Smodel.item5}} <p>
+        <p>{{Smodel.item6}}</p>
+         <p>{{Smodel.item7}}</p>
+         <p>{{Smodel.item8}}</p>
+      </div>
+
+<!--
+  <ion-list>
                 <ion-item>
                   <ion-thumbnail item-start>
                     <img src="">
@@ -39,5 +55,6 @@
                               <button ion-button clear item-end>Buy</button>
                             </ion-item>
                           </ion-list>
-
-</ion-content>
+                       
+                      </ion-content>
+                       -->
