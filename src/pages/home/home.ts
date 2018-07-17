@@ -4,7 +4,7 @@
 // <reference path="types/MicrosoftMaps/Microsoft.Maps.All.d.ts" />
 
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, Img } from 'ionic-angular';
 import { Shelter } from '../home/Models'
 import { Http } from '@angular/http'; //for intergrating 
 import 'rxjs/add/operator/map';
@@ -35,16 +35,18 @@ export class HomePage {
     shelter1.link = "https://www.haven.org.za/";
     shelter1.lat = -33.9249
     shelter1.lng = 18.4241
-    shelter1.page = " navigateToShelter1Page"
-    
-    shelter1.item1 = "Blanket - 10 - $10.00 each"
-    shelter1.item2 = "Pillow - 10 pieces - $14.00 each";
-    shelter1.item3 = "Sheet - 10 pieces - $14.00 each";
-    shelter1.item4 = "Socks - 10 pairs - $7.00 for pack of 10";
-    shelter1.item5 = "Laundry detergent - 10 boxes -  $7.50 each";
-    shelter1.item6 = "";
-    shelter1.item7 = "";
-    shelter1.item8 = "";
+    shelter1.page = "navigateToShelter1Page"
+
+    shelter1.items = [{ desc: "Blanket - 10 - $10.00 each", imageUrl: "https://thumbs.dreamstime.com/z/fleece-blanket-mint-green-roll-white-95195518.jpg" },]
+    shelter1.items = [{desc: "Pillow - 10 pieces - $14.00 each", imageUrl: "" "Sheet - 10 pieces - $14.00 each", "Laundry detergent - 10 boxes -  $7.50 each"},]
+    // shelter1.item1 = "Blanket - 10 - $10.00 each" ;
+    // shelter1.item2 = "Pillow - 10 pieces - $14.00 each";
+    // shelter1.item3 = "Sheet - 10 pieces - $14.00 each";
+    // shelter1.item4 = "Socks - 10 pairs - $7.00 for pack of 10";
+    // shelter1.item5 = "Laundry detergent - 10 boxes -  $7.50 each";
+    // shelter1.item6 = "";
+    // shelter1.item7 = "";
+    // shelter1.item8 = "";
     this.shelters.push(shelter1);
 
     var shelter2 = new Shelter();
@@ -57,16 +59,22 @@ export class HomePage {
     shelter2.lng = 18.5
     shelter2.page = " navigateToShelter2Page"
 
-    shelter2.item1 = "Toothbrush - 2 brushes - $1.50 each";
-    shelter2.item2 = "Sheet - 20 pieces - $14.00 each";
-    shelter2.item3 = "Socks - 20 pairs - $7.00 for pack of 10";
-    shelter2.item4 = "Laundry detergent - 20 boxes -  $7.50 each";
-    shelter2.item5 = "";
-    shelter2.item6 = "";
-    shelter2.item7 = "";
-    shelter2.item8 = "";
+    // shelter2.item1 = "Toothbrush - 2 brushes - $1.50 each";
+    // shelter2.item2 = "Sheet - 20 pieces - $14.00 each";
+    // shelter2.item3 = "Socks - 20 pairs - $7.00 for pack of 10";
+    // shelter2.item4 = "Laundry detergent - 20 boxes -  $7.50 each";
+    // shelter2.item5 = "";
+    // shelter2.item6 = "";
+    // shelter2.item7 = "";
+    // shelter2.item8 = "";
     this.shelters.push(shelter2);
 
+    // public shelters: Array<Smodel> =
+    //[ {name: "shelter1name",
+    //   address: "shelter1address",
+    //   items: [{desc: "item 1 desc", imageUrl: "item1 url"}, {desc: "item 2 desc", imageUrl: "item2 url"}]},
+    //  {name: "shelter2name"},
+    //  {name: "shelter3name"} ];
   }
   _markerTypeId = MarkerTypeId
   // a little trick so we can use enums in the template...
