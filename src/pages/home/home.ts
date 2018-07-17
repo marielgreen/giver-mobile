@@ -11,6 +11,7 @@ import 'rxjs/add/operator/map';
 import { MarkerTypeId, IMapOptions } from 'angular-maps';
 import { Shelter1Page } from '../shelter1list/shelter1list';
 import { Shelter2Page } from '../shelter2list/shelter2list';
+import { DonatePage } from '../donate/donate';
 
 @Component({
   selector: 'page-home',
@@ -70,6 +71,11 @@ export class HomePage {
   navigateToShelter2list() {
     console.log("Navigating..");
     this.navCtrl.push(Shelter2Page)
+  }
+
+  navigateToDonate() {
+    console.log("Navigating..");
+    this.navCtrl.push(DonatePage)
   }
 
 

@@ -11,6 +11,9 @@ import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
 import { Shelter1Page } from '../pages/shelter1list/shelter1list';
 import { Shelter2Page } from '../pages/shelter2list/shelter2list';
+import { UpdatePage } from '../pages/update/update';
+import { DonatePage } from '../pages/donate/donate';
+import { ForgotPasswordPage } from '../pages/forgotpassword/forgotpassword';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,10 @@ import { Shelter2Page } from '../pages/shelter2list/shelter2list';
     LoginPage,
     RegisterPage,
     Shelter1Page,
-    Shelter2Page
+    Shelter2Page,
+    UpdatePage,
+    DonatePage,
+    ForgotPasswordPage,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +40,10 @@ import { Shelter2Page } from '../pages/shelter2list/shelter2list';
     LoginPage,
     RegisterPage,
     Shelter1Page,
-    Shelter2Page
+    Shelter2Page,
+    UpdatePage,
+    DonatePage,
+    ForgotPasswordPage
 
   ],
   providers: [
