@@ -19,16 +19,15 @@
 
         <ion-item class="remove-background">
           <ion-label floating color="black">Email</ion-label>
-          <ion-input type="text"></ion-input>
+          <ion-input type="text"[(ngModel)]="email"></ion-input>
         </ion-item>
 
         <ion-item class="remove-background">
           <ion-label floating>Password</ion-label>
-          <ion-input type="password"></ion-input>
+          <ion-input type="password" [(ngModel)]="password"></ion-input>
         </ion-item>
 
       </ion-list>
-        <button ion-button color="dark" clear (click)="navigateToForgotPassword()">Forgot password?</button>
         <br>
         <button ion-button color="dark" class="sign-up-button" (click)="navigateToHome()">Sign in</button>
         <button ion-button color="dark" class="register-button"  (click)="navigateToRegister()">Register</button>
