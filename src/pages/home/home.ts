@@ -9,7 +9,6 @@ import { Shelter } from '../home/Models'
 import { Http } from '@angular/http'; //for intergrating 
 import 'rxjs/add/operator/map';
 import { MarkerTypeId, IMapOptions } from 'angular-maps';
-import { Smodel } from '../shelter1list/smodel';
 import { Shelter1Page} from '../shelter1list/shelter1list';
 
 @Component({
@@ -37,6 +36,15 @@ export class HomePage {
     shelter1.lat = -33.9249
     shelter1.lng = 18.4241
     shelter1.page = " navigateToShelter1Page"
+    
+    shelter1.item1 = "Blanket - 10 - $10.00 each"
+    shelter1.item2 = "Pillow - 10 pieces - $14.00 each";
+    shelter1.item3 = "Sheet - 10 pieces - $14.00 each";
+    shelter1.item4 = "Socks - 10 pairs - $7.00 for pack of 10";
+    shelter1.item5 = "Laundry detergent - 10 boxes -  $7.50 each";
+    shelter1.item6 = "";
+    shelter1.item7 = "";
+    shelter1.item8 = "";
     this.shelters.push(shelter1);
 
     var shelter2 = new Shelter();
@@ -48,6 +56,15 @@ export class HomePage {
     shelter2.lat = -33.875
     shelter2.lng = 18.5
     shelter2.page = " navigateToShelter2Page"
+
+    shelter2.item1 = "Toothbrush - 2 brushes - $1.50 each";
+    shelter2.item2 = "Sheet - 20 pieces - $14.00 each";
+    shelter2.item3 = "Socks - 20 pairs - $7.00 for pack of 10";
+    shelter2.item4 = "Laundry detergent - 20 boxes -  $7.50 each";
+    shelter2.item5 = "";
+    shelter2.item6 = "";
+    shelter2.item7 = "";
+    shelter2.item8 = "";
     this.shelters.push(shelter2);
 
   }
@@ -67,6 +84,8 @@ export class HomePage {
 
   navigateToShelter1Page(shelter) {
     console.log("Navigating..");
-    this.navCtrl.push(Shelter1Page);
+    this.navCtrl.push(Shelter1Page, {
+      "s": shelter
+    });
   }
 }
