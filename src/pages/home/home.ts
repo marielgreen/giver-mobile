@@ -9,13 +9,8 @@ import { Shelter } from '../home/Models'
 import { Http } from '@angular/http'; //for intergrating 
 import 'rxjs/add/operator/map';
 import { MarkerTypeId, IMapOptions } from 'angular-maps';
-<<<<<<< HEAD
-import { Shelter1Page} from '../shelter1list/shelter1list';
-=======
 import { Shelter1Page } from '../shelter1list/shelter1list';
-import { Shelter2Page } from '../shelter2list/shelter2list';
 import { DonatePage } from '../donate/donate';
->>>>>>> master
 
 @Component({
   selector: 'page-home',
@@ -44,7 +39,7 @@ export class HomePage {
     shelter1.page = "navigateToShelter1Page"
 
     shelter1.items = [{ desc: "Blanket - 10 - $10.00 each", imageUrl: "https://thumbs.dreamstime.com/z/fleece-blanket-mint-green-roll-white-95195518.jpg" },]
-    shelter1.items = [{desc: "Pillow - 10 pieces - $14.00 each", imageUrl: "" "Sheet - 10 pieces - $14.00 each", "Laundry detergent - 10 boxes -  $7.50 each"},]
+  
     // shelter1.item1 = "Blanket - 10 - $10.00 each" ;
     // shelter1.item2 = "Pillow - 10 pieces - $14.00 each";
     // shelter1.item3 = "Sheet - 10 pieces - $14.00 each";
@@ -102,14 +97,9 @@ export class HomePage {
       "s": shelter
     });
   }
-<<<<<<< HEAD
-=======
 
   navigateToDonate() {
     console.log("Navigating..");
     this.navCtrl.push(DonatePage)
   }
-
-
->>>>>>> master
 }
