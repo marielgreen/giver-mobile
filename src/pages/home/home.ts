@@ -23,9 +23,9 @@ export class HomePage {
 
   constructor(public navCtrl: NavController, public http: Http) {
 
-    this.http.get('https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=[AqBGcbdM62R25R1aIk5BYDur1Y6Ywp2AdtN2w2QZZIONHhZaJh10cLT6hw9U2AQ-]').map(res => res.json()).subscribe(data => {
-      this.posts = data.data.children; // this is whats intergrated 
- });
+//     this.http.get('https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=[AqBGcbdM62R25R1aIk5BYDur1Y6Ywp2AdtN2w2QZZIONHhZaJh10cLT6hw9U2AQ-]').map(res => res.json()).subscribe(data => {
+//       this.posts = data.data.children; // this is whats intergrated 
+//  });
    
 
     var shelter1 = new Shelter();
