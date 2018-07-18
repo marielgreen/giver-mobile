@@ -1,6 +1,7 @@
 import { Component, NgModule } from '@angular/core';
 import { IonicPage, NavController, NavParams, IonicPageModule } from 'ionic-angular';
 import { HomePage } from '../home/home';
+import { Http } from '@angular/http';
 
 
 // @IonicPage()
@@ -10,11 +11,27 @@ import { HomePage } from '../home/home';
 })
 export class RegisterPage {
 
-  constructor(public navCtrl: NavController) {
+  name: string;
+  email: string;
+  password: string;
+  confirmPassword: string
+
+  constructor(public navCtrl: NavController,public navParams: NavParams, public http: Http) {
   }
   navigateToHome(){
-      console.log("Navigating...");
-      this.navCtrl.push(HomePage)
+    this.http.post("https://giver-api.herokuapp.com/register", {
+      name: this.name,
+      email: this.email,
+      password: this.password,
+    }).subscribe(
+      result => {console.log("Navigating...");
+      this.navCtrl.push(HomePage);
+    },
+    err => {
+      console.log(err)
+    }
+      
+    )
   }
 
   ionViewDidLoad() {

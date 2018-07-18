@@ -1,44 +1,20 @@
 <ion-header>
-    <ion-navbar>
-      <ion-title>
-        <p class="main-header">Giver</p>
-      </ion-title>
-    </ion-navbar>
-  </ion-header>
-  
-  <ion-content padding class="bg-image add-margin">
-    <ion-list>
-      <br>
-      <ion-card class="amount-card">
-        <ion-item>
-          <ion-label>
-            <span class="currency">$</span>
-          </ion-label>
-          <ion-input type="number"></ion-input>
-        </ion-item>
-      </ion-card>
-      <br>
-      <ion-card>
-        <ion-item>
-          <ion-label>Country</ion-label>
-          <ion-input type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label>Country</ion-label>
-          <ion-input type="text"></ion-input>
-        </ion-item>
-        <button ion-button color="dark" class="donate-button"> DONATE</button>
-      </ion-card>
-      <form action="your-server-side-code" method="POST">
-              <script
-                src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                data-key="pk_test_NtOQTqtfFtrZIvC4AtpR2Ppg"
-                data-amount="999"
-                data-name="zafiera"
-                data-description="Example charge"
-                data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-                data-locale="auto">
-              </script>
-            </form>
-    </ion-list>
-  </ion-content>
+  <ion-navbar>
+    <ion-title>
+      <p class="main-header">Giver</p>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form #checkout="ngForm" (ngSubmit)="onSubmit(checkout)" class="checkout">
+   <div class="form-row">
+    <label for="card-info">Card Info</label>
+     <div id="card-info" #cardInfo></div>
+          
+              <div id="card-errors" role="alert" *ngIf="error">{{ error }}</div>
+            </div>
+          
+            <button type="submit">Pay $777</button>
+          </form>
+   </ion-content>
