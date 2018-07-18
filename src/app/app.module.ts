@@ -1,6 +1,6 @@
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule } from '@angular/core';
+import { ErrorHandler, NgModule, ApplicationRef } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -14,7 +14,8 @@ import { UpdatePage } from '../pages/update/update';
 import { DonatePage } from '../pages/donate/donate';
 import { ForgotPasswordPage } from '../pages/forgotpassword/forgotpassword';
 import {FormsModule} from '@angular/forms';
-
+import { CommonModule } from '@angular/common';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import {FormsModule} from '@angular/forms';
     IonicModule.forRoot(MyApp),
     MapModule.forRoot(),
     FormsModule,
+    AgmCoreModule.forRoot({apiKey: 'AIzaSyAOcIU3Glf45SIHCXfHS5fJTdtER214WJI'}) //googlemaps
   ],
   bootstrap: [IonicApp],
   entryComponents: [

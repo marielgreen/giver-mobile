@@ -42,7 +42,7 @@ export class LoginPage {
     },
 
     error => {
-      console.log(error);
+      console.log("Error" + error);
     }
   );
 
