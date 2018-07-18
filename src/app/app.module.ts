@@ -14,6 +14,7 @@ import { Shelter2Page } from '../pages/shelter2list/shelter2list';
 import { UpdatePage } from '../pages/update/update';
 import { DonatePage } from '../pages/donate/donate';
 import { ForgotPasswordPage } from '../pages/forgotpassword/forgotpassword';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ForgotPasswordPage } from '../pages/forgotpassword/forgotpassword';
     BrowserModule,
     HttpModule,
     IonicModule.forRoot(MyApp),
-    MapModule.forRoot()
+    MapModule.forRoot(),
+    FormsModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [

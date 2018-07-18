@@ -56,10 +56,6 @@ navigateToUpdate(){
   this.navCtrl.push(UpdatePage)
 }
 
-navigateToForgotPassword(){
-  console.log("Navigating..");
-  this.navCtrl.push(ForgotPasswordPage)
-}
 
 
 }
