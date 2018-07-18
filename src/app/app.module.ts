@@ -15,6 +15,7 @@ import { DonatePage } from '../pages/donate/donate';
 import { ForgotPasswordPage } from '../pages/forgotpassword/forgotpassword';
 import {FormsModule} from '@angular/forms';
 
+
 @NgModule({
   declarations: [
     MyApp,
