@@ -6,4 +6,7 @@ export class Shelter {
     link: string;
     lat: number;
     lng: number;
+    page: string;
+    items: any[];
+
 }
