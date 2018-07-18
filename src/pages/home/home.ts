@@ -9,7 +9,13 @@ import { Shelter } from '../home/Models'
 import { Http } from '@angular/http'; //for intergrating 
 import 'rxjs/add/operator/map';
 import { MarkerTypeId, IMapOptions } from 'angular-maps';
+<<<<<<< HEAD
 import { Shelter1Page} from '../shelter1list/shelter1list';
+=======
+import { Shelter1Page } from '../shelter1list/shelter1list';
+import { Shelter2Page } from '../shelter2list/shelter2list';
+import { DonatePage } from '../donate/donate';
+>>>>>>> master
 
 @Component({
   selector: 'page-home',
@@ -96,4 +102,14 @@ export class HomePage {
       "s": shelter
     });
   }
+<<<<<<< HEAD
+=======
+
+  navigateToDonate() {
+    console.log("Navigating..");
+    this.navCtrl.push(DonatePage)
+  }
+
+
+>>>>>>> master
 }
