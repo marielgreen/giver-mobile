@@ -1,11 +1,21 @@
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { HomePage } from '../home/home';
-import { RegisterPage } from '../register/register';
-import { Http } from '@angular/http';
-import { UpdatePage} from '../update/update';
-import {Component,AfterViewInit,OnDestroy,ViewChild,ElementRef,ChangeDetectorRef} from '@angular/core';
+import {
+  Component,
+  AfterViewInit,
+  OnDestroy,
+  ViewChild,
+  ElementRef,
+  ChangeDetectorRef
+} from '@angular/core';
+
 import { NgForm } from '@angular/forms';
-import { Shelter } from '../home/Models';
+import { NavController, NavParams } from 'ionic-angular';
+
+/**
+ * Generated class for the DonatePage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
 
 
 @Component({
@@ -19,11 +29,7 @@ export class DonatePage implements AfterViewInit, OnDestroy {
   cardHandler = this.onChange.bind(this);
   error: string;
 
-  public shelter: string;;
-  constructor(private cd: ChangeDetectorRef,public navCtrl: NavController, public navParams: NavParams) {
-    this.shelter = navParams.get('shelterName');
-    console.log(this.shelter);
-  }
+  constructor(private cd: ChangeDetectorRef) {}
 
   ngAfterViewInit() {
     this.card = elements.create('card');

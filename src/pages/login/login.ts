@@ -42,7 +42,7 @@ export class LoginPage {
     },
 
     error => {
-      console.log(error);
+      console.log("Error" + error);
     }
   );
 
@@ -56,10 +56,6 @@ navigateToUpdate(){
   this.navCtrl.push(UpdatePage)
 }
 
-navigateToForgotPassword(){
-  console.log("Navigating..");
-  this.navCtrl.push(ForgotPasswordPage)
-}
 
 
 }

@@ -1,53 +1,58 @@
 <ion-header>
-          <ion-navbar>
-            <ion-title>
-              Locate the shelter you wish to donate to.
-            </ion-title>
-          </ion-navbar>
-        </ion-header>
-        
-        <ion-content padding class="bg-image add-margin">
-        
-          <!-- below is bing maps -->
-        
-          <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=AqBGcbdM62R25R1aIk5BYDur1Y6Ywp2AdtN2w2QZZIONHhZaJh10cLT6hw9U2AQ-'
-            async defer></script>
-        
-          <div style="height: 500px">
-            <x-map #xmap>
-              <x-map-marker *ngFor="let shelter of shelters" [Latitude]="shelter.lat" [Longitude]="shelter.lng" [Title]="shelter.name"
-                [IconUrl]="'#'" [IconInfo]="{
-                        markerType: _markerTypeId.FontMarker,
-                        fontName: 'FontAwesome',
-                        fontSize: 48,
-                        color: 'green',
-                        markerOffsetRatio: { x: 0.5, y: 1 },
-                        text: '\uF276'
-                    }">
-              </x-map-marker>
-            </x-map>
-          </div>
-          <div>
-        
-            <!-- need to make the search bar funtional -->
-            <!--<ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
-          <ion-list>
-          </ion-list>-->
-        
-            <ion-card>
-              <ion-card-content>
-        
-                <ion-list>
-                  <div text-center>
-                    <div *ngFor="let Shelter of shelters">
-                      <p> {{Shelter.image}}
-                        <p>
-                          <p>
-                            <b>{{Shelter.name}}</b>
-                          </p>
-                          <p>{{Shelter.address}}</p>
-                          <p>{{Shelter.note}}</p>
-        
-                          <button ion-button color="dark" outline (click)="navigateToShelter1Page(Shelter)">shelter</button>
-                          <button ion-button color="dark" outline (click)="navigateToDonate(Shelter)">donate</button>
-                    </div>
+  <ion-navbar>
+    <ion-title>
+      Locate the shelter you wish to donate to.
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="bg-image add-margin">
+
+  <h1></h1>
+
+  <agm-map 
+  [latitude]="userLocation.lat"
+  [longitude]="userLocation.lng"
+  (mapClick)="mapClicked($event)">
+
+  <agm-marker 
+      *ngFor="let shelter of shelters; let i = index"
+      (markerClick)="clickedMarker(m.label, i)"
+      [latitude]="shelter.lat"
+      [longitude]="shelter.lng"
+      [label]="shelter.name">
+      
+    <agm-info-window>
+      <strong>InfoWindow content</strong>
+    </agm-info-window>
+    
+  </agm-marker>
+  
+  <agm-circle [latitude]="lat + 0.3" [longitude]="lng" 
+      [radius]="5000"
+      [fillColor]="'red'"
+      [circleDraggable]="true"
+      [editable]="true">
+  </agm-circle>
+
+</agm-map>
+
+  <ion-list >
+  <div text-center>
+  <div *ngFor="let Shelter of shelters">
+    <p> {{Shelter.image}}
+      <p>
+        <p>
+          <b>{{Shelter.name}}</b>
+        </p>
+        <p>{{Shelter.address}}</p>
+        <p>{{Shelter.note}}</p>
+       
+        <button ion-button color="dark" outline (click)="navigateToShelter1list(Shelter)">shelter</button>
+        <button ion-button color="dark" outline (click)="navigateToDonate(Shelter)">donate</button>
+      </div>
+
+
+ 
+
+

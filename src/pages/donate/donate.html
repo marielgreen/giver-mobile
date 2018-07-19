@@ -6,25 +6,15 @@
   </ion-navbar>
 </ion-header>
 
-
-
 <ion-content padding>
-
   <form #checkout="ngForm" (ngSubmit)="onSubmit(checkout)" class="checkout">
-    <ion-item>
-      {{shelter}}
-    </ion-item>
-    <ion-item>
-      <ion-label floating color="black">Amount $</ion-label>
-      <ion-input type="number"></ion-input>
-    </ion-item>
-    <div class="form-row">
-      <label for="card-info">Card Info</label>
-      <div id="card-info" #cardInfo></div>
-
-      <div id="card-errors" role="alert" *ngIf="error">{{ error }}</div>
-    </div>
-
-    <button type="submit">Pay</button>
-  </form>
-</ion-content>
+   <div class="form-row">
+    <label for="card-info">Card Info</label>
+     <div id="card-info" #cardInfo></div>
+          
+              <div id="card-errors" role="alert" *ngIf="error">{{ error }}</div>
+            </div>
+          
+            <button type="submit">Pay $777</button>
+          </form>
+   </ion-content>

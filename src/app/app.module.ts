@@ -1,6 +1,6 @@
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule } from '@angular/core';
+import { ErrorHandler, NgModule, ApplicationRef } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -14,6 +14,8 @@ import { UpdatePage } from '../pages/update/update';
 import { DonatePage } from '../pages/donate/donate';
 import { ForgotPasswordPage } from '../pages/forgotpassword/forgotpassword';
 import {FormsModule} from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import {FormsModule} from '@angular/forms';
     HttpModule,
     IonicModule.forRoot(MyApp),
     MapModule.forRoot(),
-    FormsModule
+    FormsModule,
+    AgmCoreModule.forRoot({apiKey: 'AIzaSyAOcIU3Glf45SIHCXfHS5fJTdtER214WJI'}) //do not publish key
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -56,7 +59,7 @@ export class AppModule {}
 
 export function MapServiceProviderFactory(){
   let bc: BingMapAPILoaderConfig = new BingMapAPILoaderConfig();
-  bc.apiKey ="AqBGcbdM62R25R1aIk5BYDur1Y6Ywp2AdtN2w2QZZIONHhZaJh10cLT6hw9U2AQ-"; // your bing map key
+  bc.apiKey ="";
   bc.branch = "experimental"; 
       // to use the experimental bing brach. There are some bug fixes for
       // clustering in that branch you will need if you want to use 
