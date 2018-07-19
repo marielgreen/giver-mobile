@@ -34,7 +34,7 @@ import { AgmCoreModule } from '@agm/core';
     IonicModule.forRoot(MyApp),
     MapModule.forRoot(),
     FormsModule,
-    AgmCoreModule.forRoot({apiKey: 'AIzaSyAOcIU3Glf45SIHCXfHS5fJTdtER214WJI'}) //googlemaps
+    AgmCoreModule.forRoot({apiKey: 'AIzaSyAOcIU3Glf45SIHCXfHS5fJTdtER214WJI'}) //do not publish key
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -59,7 +59,7 @@ export class AppModule {}
 
 export function MapServiceProviderFactory(){
   let bc: BingMapAPILoaderConfig = new BingMapAPILoaderConfig();
-  bc.apiKey ="AqBGcbdM62R25R1aIk5BYDur1Y6Ywp2AdtN2w2QZZIONHhZaJh10cLT6hw9U2AQ-"; // your bing map key
+  bc.apiKey ="";
   bc.branch = "experimental"; 
       // to use the experimental bing brach. There are some bug fixes for
       // clustering in that branch you will need if you want to use 

@@ -8,15 +8,13 @@
 
 <ion-content padding class="bg-image add-margin">
 
-  <h1>Google maps</h1>
+  <h1></h1>
 
-  <!--map start location-->
   <agm-map 
   [latitude]="userLocation.lat"
   [longitude]="userLocation.lng"
   (mapClick)="mapClicked($event)">
 
-  <!--pulling map from array shelter-->
   <agm-marker 
       *ngFor="let shelter of shelters; let i = index"
       (markerClick)="clickedMarker(m.label, i)"
@@ -38,8 +36,6 @@
   </agm-circle>
 
 </agm-map>
-
-<!-- shelter list below -->
 
   <ion-list >
   <div text-center>

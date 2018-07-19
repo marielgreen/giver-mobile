@@ -2,7 +2,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Shelter } from '../home/Models';
-import { Http } from '@angular/http'; //for intergrating 
+import { Http } from '@angular/http'; 
 import 'rxjs/add/operator/map';
 import { MarkerTypeId, IMapOptions } from 'angular-maps';
 import { Shelter1Page } from '../shelter1list/shelter1list';
