@@ -12,7 +12,7 @@ export class Shelter1Page {
     public shelter: Shelter = new Shelter();
 
     constructor(public navCtrl: NavController, public navParams: NavParams) {
-        this.shelter = navParams.get('s')
+        this.shelter = navParams.get('s');
 
     }
 }

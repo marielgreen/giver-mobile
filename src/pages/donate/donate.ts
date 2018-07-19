@@ -28,8 +28,12 @@ export class DonatePage implements AfterViewInit, OnDestroy {
   card: any;
   cardHandler = this.onChange.bind(this);
   error: string;
+  shelterName: string;
 
-  constructor(private cd: ChangeDetectorRef) {}
+  constructor(private cd: ChangeDetectorRef, public navParams: NavParams) {
+
+    this.shelterName = navParams.get('shelterName');
+  }
 
   ngAfterViewInit() {
     this.card = elements.create('card');

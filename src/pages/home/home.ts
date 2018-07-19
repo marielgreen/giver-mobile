@@ -57,7 +57,7 @@ export class HomePage {
     shelter2.items = [{desc: "Pillow - 10 pieces - $14.00 each", imageUrl: "https://target.scene7.com/is/image/Target/52375325_Alt02?wid=488&hei=488&fmt=pjpeg"}, 
      {desc: "Laundry detergent - 10 boxes -  $4.50 each", imageUrl: "https://images-na.ssl-images-amazon.com/images/I/916DnOKJqiL._SX355_.jpg"},
      {desc: "Blanket - 20 - $7.50 each", imageUrl:"http://www.americanblanketcompany.com/v/vspfiles/photos/84863401-2T.jpg"},
-     {desc: "Deoderant - 35 - 1.50 each", imageUrl:"https://target.scene7.com/is/image/Target/Oct-Wk1-Deodorant-CB-deodorant-antiperspirant99019-170921_1506026140158?wid=328&hei=328&qlt=80&fmt=pjpeg"}]
+ +    {desc: "Deoderant - 35 - 1.50 each", imageUrl:"https://target.scene7.com/is/image/Target/Oct-Wk1-Deodorant-CB-deodorant-antiperspirant99019-170921_1506026140158?wid=328&hei=328&qlt=80&fmt=pjpeg"}]
     this.shelters.push(shelter2);
 
   }
@@ -74,7 +74,7 @@ export class HomePage {
   _click() { console.log("hello.world..."); }
 
   navigateToShelter1Page(shelter) {
-    console.log("Navigating..");
+    console.log("Navigating to shelter specific page: " + shelter);
     this.navCtrl.push(Shelter1Page, {
       "s": shelter
     });

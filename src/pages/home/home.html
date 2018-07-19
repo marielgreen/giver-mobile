@@ -36,7 +36,7 @@
   </agm-circle>
 
 </agm-map>
-
+<ion-card>
   <ion-list >
   <div text-center>
   <div *ngFor="let Shelter of shelters">
@@ -48,7 +48,7 @@
         <p>{{Shelter.address}}</p>
         <p>{{Shelter.note}}</p>
        
-        <button ion-button color="dark" outline (click)="navigateToShelter1list(Shelter)">shelter</button>
+        <button ion-button color="dark" outline (click)="navigateToShelter1Page(Shelter)">shelter</button>
         <button ion-button color="dark" outline (click)="navigateToDonate(Shelter)">donate</button>
       </div>
 
